@@ -17,47 +17,59 @@ const WrapperSwiper = styled(Swiper)`
 const submenu = [
   {
     key: 'ALL',
-    title: 'Tất cả'
+    title: 'Bệnh viện công'
   },
   {
     key: 'MESH',
-    title: 'Mesh'
+    title: 'Bệnh viện tư'
   },
   {
     key: 'SENSOR',
-    title: 'Cảm biến'
+    title: 'Phòng khám'
   },
   {
     key: 'SMART_LIGHT',
-    title: 'Đèn thông minh'
+    title: 'Phòng mạch'
   },
   {
     key: 'SWITCH',
-    title: 'Công tắc'
+    title: 'Xét nghiệm'
   },
   {
     key: 'SMART_SPEAKER',
-    title: 'Loa thông minh'
+    title: 'Y tế tại nhà'
+  },
+  {
+    key: 'SMART_SPEAKER1',
+    title: 'Tiêm chung'
   }
 ]
 
 //* subMenu cho Giải pháp
 const subMenuSolution = [
   {
-    img: '/images/solution-auto-control.png',
-    label: 'Điều khiển tự động'
+    img: '/images/booking-examination.jpg',
+    label: 'Đặt lịch tại cơ sở y tế'
   },
   {
-    img: '/images/solution-smart-connect.png',
-    label: 'Kết nối thông minh'
+    img: '/images/booking-examination.jpg',
+    label: 'Đặt lịch khám theo bác sỹ'
   },
   {
-    img: '/images/solution-save-energy.png',
-    label: 'Tiết kiệm điện năng'
+    img: '/images/booking-examination.jpg',
+    label: 'Đặt lịch xét nghiệm'
   },
   {
-    img: '/images/solution-safe-security.png',
-    label: 'An ninh an toàn'
+    img: '/images/booking-examination.jpg',
+    label: 'Đặt lịch tiêm chủng'
+  },
+  {
+    img: '/images/booking-examination.jpg',
+    label: 'Gói khám sức khoẻ'
+  },
+  {
+    img: '/images/booking-examination.jpg',
+    label: 'Thanh toán viện phí'
   }
 ]
 
@@ -110,7 +122,7 @@ const CategoryMenuBos: React.FC<{
     <div onMouseEnter={handleWrapperMouseEnter} onMouseLeave={handleWrapperMouseLeave}>
       {visibleCategory && (
         <div
-          className='absolute left-0 w-full bg-white h-auto rounded-b-xl py-8'
+          className='absolute left-0 w-full bg-white h-auto rounded-b-xl py-8 shadow-lg'
           style={{
             top: '41px',
             borderTop: '1px solid #E2E8F3'
@@ -147,7 +159,6 @@ const CategoryMenuBos: React.FC<{
                           }}
                         >
                           {/* img */}
-                          <div className='w-36 flex justify-center'>Camera indoor</div>
                         </Card>
                       </div>
                     </SwiperSlide>

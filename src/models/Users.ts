@@ -1,7 +1,7 @@
 import { Base } from './Base'
 
 class Users extends Base {
-  getProfile = (token: any) => this.apiGetWithoutPrefix('/api/user/profile', token)
+  getProfile = (body: any) => this.apiPostWithoutPrefix('/api/info_person', body)
 }
 
 export default new Users('/users')

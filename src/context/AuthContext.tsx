@@ -146,13 +146,11 @@ const AuthProvider = ({ children }: Props) => {
     await axios
       .post(authConfig.loginEndpoint, params)
       .then(async (response: AxiosResponse<LoginResponse>) => {
-        debugger
         if (successCallBack) {
           ;(await successCallBack) && successCallBack(response?.data)
         }
       })
       .catch(err => {
-        debugger
         catchError(err, errorCallback && errorCallback(err))
       })
   }

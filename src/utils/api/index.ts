@@ -73,8 +73,6 @@ axiosConfig.interceptors.response.use(
         duration: 3
       })
     } else if (!response) {
-      debugger
-
       notification.error({
         message: 'Đã có lỗi xảy ra, vui lòng thử lại sau ít phút.',
         duration: 3

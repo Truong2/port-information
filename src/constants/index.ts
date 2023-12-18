@@ -1,3 +1,3 @@
 export * from './navigation'
-export * from './onedx'
+export * from './system'
 export * from './status'

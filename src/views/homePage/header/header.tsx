@@ -6,11 +6,12 @@ import { Avatar, Dropdown, Menu, Space } from 'antd'
 // ** Demo Imports
 import { DownArrowIcon, LogoPort } from '@/assets/icons'
 import styled from '@emotion/styled'
+import { Transaction } from '@onesme/dxui'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import CategoryMenuBos from './CategoryMenuBos'
-import Link from 'next/link'
-import { Button, Transaction } from '@onesme/dxui'
+import { Button } from '@mui/material'
 
 // Menu Header
 export const ITEM_NAV = {
@@ -136,15 +137,15 @@ const Header = () => {
     notLoggedIn ? (
       <>
         {/* Chưa đăng nhập */}
-        <Link title='Đăng nhập' className='body-14-medium ' href='/login'>
+        <Link title='Đăng nhập' className='body-14-medium text-greenAccent1000 ' href='/login'>
           Đăng nhập
         </Link>
         <Button
-          className='ml-2 body-14-medium border-none'
-          type='primary-normal'
+          variant='contained'
           onClick={() => {
             router.push('/register')
           }}
+          className='ml-2 body-14-medium border-none'
         >
           Đăng ký
         </Button>
@@ -184,8 +185,13 @@ const Header = () => {
             {/* column 2 */}
           </div>
           <div className='pt-3 flex px-6 items-center justify-center relative'>
-            <div className='flex items-center gap-6 body-14-regular'>
-              <Menu mode='horizontal' className='body-14-regular menu-bos'>
+            <div className='flex items-center gap-6 body-14-regular '>
+              <Menu
+                mode='horizontal'
+                defaultSelectedKeys={['1']}
+                disabledOverflow={true}
+                className='body-14-regular menu-bos'
+              >
                 {menuItems.map(item => (
                   <Menu.Item key={item.key} onClick={() => router.push(item.to as string)}>
                     <CustomDiv

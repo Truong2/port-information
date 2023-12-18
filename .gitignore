@@ -14,7 +14,7 @@
 
 # production
 /build
-/build-workplace
+/build-portal-information
 
 # misc
 .DS_Store

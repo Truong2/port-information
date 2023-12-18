@@ -5,7 +5,7 @@ export default {
 
   loginEndpoint: `${API_ROOT}/api/login`,
 
-  getUserProfile: `${API_ROOT}/api/user/profile`,
+  getUserProfile: `${API_ROOT}/api/info_person`,
 
   logout: `${API_ROOT}/token/remove`,
 

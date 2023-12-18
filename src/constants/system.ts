@@ -1,7 +1,7 @@
-import axios from 'axios'
-import { NextRouter } from 'next/router'
 import authConfig from '@/configs/auth'
+import Users from '@/models/Users'
 import { setCookie } from 'cookies-next'
+import { NextRouter } from 'next/router'
 
 export const DEV_ENV = process.env.NODE_ENV === 'development'
 
@@ -103,30 +103,40 @@ export const ACTION_TYPE = {
 
 export const REGEX_MAIL_OR_TAX_CODE = /^(?:\d{10}|\d{13}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
 
-export const getProfileUser = (token: string, setUser: any, route: NextRouter) => {
-  axios
-    .get(authConfig.getUserProfile, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-    .then(async response => {
-      setUser({ ...response.data })
-      window.localStorage.setItem('userData', JSON.stringify(response.data))
-      const returnUrl = route.query.returnUrl
-      const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
+export const getProfileUser = async (token: string, setUser: any, route: NextRouter) => {
+  // Fake tạm
+  const res = await Users.getProfile({})
+  res.data = { name: 'Nguyễn Văn A', id: 1 }
+  setUser({ ...res.data })
+  window.localStorage.setItem('userData', JSON.stringify(res.data))
+  const returnUrl = route.query.returnUrl
+  const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
 
-      await route.replace(redirectURL as string)
-    })
-    .catch(() => {
-      localStorage.removeItem('userData')
-      localStorage.removeItem('refreshToken')
-      localStorage.removeItem('accessToken')
-      setUser(null)
-      if (authConfig.onTokenExpiration === 'logout' && !route.pathname.includes('login')) {
-        route.replace('/login')
-      }
-    })
+  await route.replace(redirectURL as string)
+
+  // axios
+  //   .post(authConfig.getUserProfile, {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`
+  //     }
+  //   })
+  //   .then(async response => {
+  //     setUser({ ...response.data })
+  //     window.localStorage.setItem('userData', JSON.stringify(response.data))
+  //     const returnUrl = route.query.returnUrl
+  //     const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
+
+  //     await route.replace(redirectURL as string)
+  //   })
+  //   .catch(() => {
+  //     localStorage.removeItem('userData')
+  //     localStorage.removeItem('refreshToken')
+  //     localStorage.removeItem('accessToken')
+  //     setUser(null)
+  //     if (authConfig.onTokenExpiration === 'logout' && !route.pathname.includes('login')) {
+  //       route.replace('/login')
+  //     }
+  //   })
 }
 
 // Format các kí tự đặc biệt mà string không truyền xuống được
@@ -137,11 +147,13 @@ export function formatSpecialDigits(value: string) {
 export const setToken = (token: string) => {
   const expirationToken = new Date()
   expirationToken.setTime(expirationToken.getTime() + 10 * 60 * 60 * 1000) // 10 hour in milliseconds
+  window.localStorage.setItem(authConfig.storageTokenKeyName, token)
   setCookie(authConfig.storageTokenKeyName, `Bearer ${token}`, {
     expires: expirationToken,
     sameSite: 'lax'
   })
 }
+
 export const setRefreshToken = (refreshToken: string) => {
   const expirationRefreshToken = new Date()
   expirationRefreshToken.setTime(expirationRefreshToken.getTime() + 30 * 24 * 60 * 60 * 1000) // 30 day in milliseconds

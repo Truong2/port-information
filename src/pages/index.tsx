@@ -6,6 +6,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      <div className='bg-amber-700'></div>
     </>
   )
 }
