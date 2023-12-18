@@ -1,0 +1,292 @@
+/* custom antd */
+.ant-form-item {
+  margin-bottom: 0px !important;
+}
+
+.menu-bos.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item {
+  &:hover,
+  &-selected {
+    &::after {
+      border-bottom: 2px solid transparent;
+    }
+  }
+}
+/* input  */
+.ant-input-search .ant-input:focus {
+  border-color: #28c76f;
+}
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper:focus-within {
+  border-color: #28c76f;
+}
+.ant-input-affix-wrapper:hover {
+  border-color: #28c76f;
+}
+
+// Select
+.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
+  .ant-select-selector {
+  border-color: #28c76f;
+}
+
+.ant-select-single.ant-select-lg .ant-select-selector .ant-select-selection-item {
+  line-height: 44px !important;
+}
+.ant-select-focused.ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(
+    .ant-pagination-size-changer
+  )
+  .ant-select-selector {
+  border-color: #28c76f;
+  box-shadow: 0 0 0 0 !important;
+  outline: 0;
+}
+
+.ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button:not(.ant-btn-primary):active {
+  color: #28c76f;
+  border-color: #28c76f;
+}
+.ant-input-search
+  > .ant-input-group
+  > .ant-input-group-addon:last-child
+  .ant-input-search-button:not(.ant-btn-primary):hover {
+  color: #28c76f;
+  border-color: #28c76f;
+}
+.ant-input {
+  border-radius: 8px;
+  // height: 40px;
+}
+.ant-input:hover {
+  border-color: #28c76f;
+}
+.ant-input:focus,
+.ant-input:focus-within {
+  border-color: #28c76f;
+}
+// scroll
+.beauty-scroll {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #babac0;
+  }
+  &.small::-webkit-scrollbar {
+    width: 3px;
+  }
+  &.small::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+  }
+}
+
+.beauty-scroll-small {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #babac0;
+  }
+  &.small::-webkit-scrollbar {
+    width: 3px;
+  }
+  &.small::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+  }
+}
+
+.beauty-scroll-horizontal {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: #babac0;
+  }
+}
+
+.beauty-scroll-table {
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #babac0;
+  }
+}
+
+.beauty-scroll-table-small {
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #babac0;
+  }
+}
+
+.home-scroll {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #babac0;
+  }
+  &.ant-scrolling-effect {
+    width: calc(100% - 10px) !important;
+  }
+}
+
+.scroll--fit-content {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin: 10px 0px;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #babac0;
+  }
+  &.small::-webkit-scrollbar {
+    width: 3px;
+  }
+  &.small::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+  }
+}
+// toggle
+.ant-switch {
+  display: flex;
+  width: 42px;
+  padding: 2px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  &.ant-switch-checked {
+    background: #28c76f;
+  }
+  &.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled) {
+    background: #28c76f;
+  }
+  &.ant-switch-checked.ant-switch-disabled {
+    background: #28c76f;
+  }
+}
+
+// Table
+.table-select-class {
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+  .ant-table-body::-webkit-scrollbar {
+    display: none;
+  }
+}
+.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  background-color: #e8f2fc;
+}
+
+// change color row table
+.ant-table-tbody > tr.change-bg {
+  background: #fafafa !important;
+  & > td {
+    padding: 0.625rem 1rem !important;
+  }
+}
+
+.ant-table-tbody > tr.selected-tb {
+  &.one-tb {
+    background: #fafafa !important;
+  }
+  & > td {
+    padding: 0.45rem 1rem;
+  }
+}
+.table-no-content {
+  .ant-table-tbody {
+    display: none;
+  }
+}
+
+.service-table-custom {
+  .ant-table-thead {
+    display: none;
+  }
+}
+
+.table-title {
+  .ant-table-cell {
+    color: #666;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  thead > tr {
+    th {
+      padding: 1.25rem 1rem;
+    }
+    th:first-child {
+      border-top-left-radius: 12px !important;
+    }
+    th:last-child {
+      border-top-right-radius: 12px !important;
+    }
+  }
+}
+// panigation
+.ant-pagination {
+  li:focus {
+    box-shadow: 0 0 0 2px rgba(19, 94, 168, 0.2);
+  }
+  .ant-pagination-item {
+    border-color: #333333 !important;
+    a {
+      color: #333333 !important;
+    }
+  }
+
+  .ant-pagination-item-active {
+    background-color: #333333;
+    a {
+      color: #ffffff !important;
+    }
+  }
+}

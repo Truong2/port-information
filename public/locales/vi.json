@@ -1,0 +1,74 @@
+{
+  "common": {},
+  "button": {
+    "add": "Thêm mới",
+    "cancel": "Huỷ",
+    "continue": "Tiếp tục",
+    "confirm": "Xác nhận",
+    "downloadHere": "Tải xuống tại đây",
+    "deleteRole": "Xoá vai trò",
+    "addStaff": "Thêm nhân viên",
+    "edit": "Chỉnh sửa",
+    "filter": "Bộ lọc",
+    "downloadFileSample": "Tải về file mẫu"
+  },
+  "navigation": {},
+  "menu": {
+    "roleManagement": "Quản lý vai trò",
+    "listRole": "Danh sách vai trò",
+    "roleInfo": "Thông tin vai trò",
+    "roleStaff": "Nhân viên gắn với vai trò",
+    "addEmployeeMethod": "Hình thức thêm nhân viên",
+    "uploadEmployeeList": "Tải lên danh sách nhân viên"
+  },
+  "tab": {
+    "active": "Đang hoạt động",
+    "inactive": "Không hoạt động"
+  },
+  "placeholder": {
+    "roleName": "Tên vai trò"
+  },
+  "label": {
+    "total": "Tổng số",
+    "sum": "Tổng",
+    "generalInfo": "Thông tin chung",
+    "rolePermission": "Quyền gắn với vai trò",
+    "roleName": "Tên vai trò",
+    "activeStatus": "Trạng thái hoạt động",
+    "status": "Trạng thái",
+    "employeeName": "Họ và tên nhân viên",
+    "department": "Phòng ban",
+    "dropToUpload": "Kéo thả hoặc tải file lên",
+    "chooseXls": "Vui lòng chọn file có định dạng .xls hoặc .xlsx",
+    "pleaseUploadCorrectFormat": "File tải lên đảm bảo đúng định dạng như File mẫu",
+    "uploadUnsuccessful": "Tải lên không thành công",
+    "wrongFormatFile": "Chỉ hỗ trợ định dạng .xls hoặc .xlsx",
+    "wrongInfoFile": "File sai thông tin. Tải xuống file đã kiểm tra lỗi.",
+    "logout": "Đăng xuất",
+    "inactive": "Không hoạt động",
+    "selectARoleToViewDetail": "Chọn một vai trò để xem chi tiết",
+    "notFoundRelevantResult": "Không tìm thấy kết quả phù hợp"
+  },
+  "title": {
+    "inactiveStatus": "Tắt hoạt động vai trò",
+    "methodSendOTP": "Xác thực mã OTP"
+  },
+  "subTitle": {
+    "methodSendOTP": "Chọn hình thức gửi mã xác thực OTP"
+  },
+  "content": {
+    "disableEmployeeUseRole": "Hành động này sẽ khiến các nhân viên được gắn với vai trò không được phép sử dụng vai trò"
+  },
+  "messages": {
+    "confirmLogout": "Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?"
+  },
+  "errors": {
+    "usernameOrPassWrong": "Tên đăng nhập hoặc mật khẩu không chính xác",
+    "errorOccurred": "Đã có lỗi xảy ra, vui lòng thử lại sau ít phút.",
+    "serverMaintenance": "Server đang bảo trì, vui lòng thử lại sau",
+    "notDeclarePhone": "Số điện thoại chưa được khai báo"
+  },
+  "setting": {
+    "configuringNavigation": "Cấu hình Navigation"
+  }
+}
