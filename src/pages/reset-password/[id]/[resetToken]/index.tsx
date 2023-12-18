@@ -15,13 +15,9 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Imports
 import LoginPageLayout from '@/layouts/components/login/LoginPageLayout'
-import ModalNotification from '@/layouts/components/register/ModalNotification'
-import AuthModel from '@/models/AuthModel'
 import { validatePassword, validateRequire, validateRequireInput } from '@/utils/validation'
 import { Button, TextField } from '@onesme/dxui'
-import { useMutation } from '@tanstack/react-query'
 import { Form } from 'antd'
-import { useRouter } from 'next/router'
 import { trim } from 'stylis'
 
 // Styled Components
@@ -38,12 +34,8 @@ const CustomForm = styled(Form)`
 const ResetPassword = () => {
   // hooks
   const [form] = Form.useForm()
-  const router = useRouter()
-  const { id, resetToken } = router.query as { id: string; resetToken: string }
 
   //state
-  const [visibleModal, setVisibleModal] = useState(false)
-  const [infoModal, setInfoModal] = useState({})
   const [errorForm, setErrorForm] = useState<{
     newPassword: string
     confirmPassword: string
@@ -51,40 +43,6 @@ const ResetPassword = () => {
     newPassword: '',
     confirmPassword: ''
   })
-
-  const successModal = {
-    iconType: 'SUCCESS',
-    title: 'Đổi mật khẩu thành công',
-    subTile: 'Hãy sử dụng mật khẩu mới để đăng nhập.',
-    textButton: 'Đi dền đăng nhập',
-    redirectPage: '/login'
-  }
-
-  const errorModal = {
-    iconType: 'ERROR',
-    title: 'Đổi mật khẩu thất bại',
-    subTile: 'Đã có lỗi xảy ra. Vui lòng thử lại sau một vài phút.',
-    textButton: 'Đi đến quên mật khẩu',
-    redirectPage: '/forgot-password'
-  }
-
-  const mutation = useMutation(AuthModel.resetPassword, {
-    onSuccess: () => {
-      setVisibleModal(true)
-      setInfoModal(successModal)
-    },
-    onError: (error: any) => {
-      setVisibleModal(true)
-
-      console.log(error)
-      setInfoModal(errorModal)
-    }
-  })
-
-  const handleSubmitReset = (dataReset: any) => {
-    const newPassword = { newPassword: dataReset.newPassword }
-    mutation.mutate({ id, resetToken, newPassword })
-  }
 
   return (
     <LoginPageLayout
@@ -94,7 +52,6 @@ const ResetPassword = () => {
       <CustomForm
         form={form}
         className='mt-12 flex flex-col '
-        onFinish={handleSubmitReset}
         onFieldsChange={() => {
           const errorArray = form.getFieldsError()
           const newErrorForm = {
@@ -162,9 +119,6 @@ const ResetPassword = () => {
           </Button>
         </div>
       </CustomForm>
-
-      {/* Modal */}
-      <ModalNotification visibleModal={visibleModal} setVisibleModal={setVisibleModal} infoModal={infoModal} />
     </LoginPageLayout>
   )
 }
