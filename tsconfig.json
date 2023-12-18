@@ -37,7 +37,8 @@
   },
   "include": [
     "src",
-    "declaration.d.ts"
+    "declaration.d.ts",
+    "src/constants/system.ts"
   ],
   "exclude": [
     "node_modules"
